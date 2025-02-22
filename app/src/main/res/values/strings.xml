@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ProjecteAndroid</string>
+    <string name="name_hint">Nom</string>
+    <string name="phone_hint">Telèfon</string>
+    <string name="email_hint">Email</string>
+    <string name="save_button_text">Guardar</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
