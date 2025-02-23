@@ -1,11 +1,11 @@
 package com.mihaisebastian.projecteandroid.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import androidx.room.Delete
-import androidx.lifecycle.LiveData
 
 @Dao
 interface ContactDao {
@@ -16,12 +16,12 @@ interface ContactDao {
     @Update
     suspend fun update(contact: ContactEntity)
 
-    @Delete
-    suspend fun delete(contact: ContactEntity)
+    @Query("DELETE FROM contacts WHERE id = :id")
+    suspend fun delete(id: Long)
 
     @Query("SELECT * FROM contacts ORDER BY name ASC")
     fun getAllContacts(): LiveData<List<ContactEntity>>
 
-    @Query("SELECT * FROM contacts WHERE id = :contactId")
-    fun getContactById(contactId: Long): LiveData<ContactEntity>
+    @Query("SELECT * FROM contacts WHERE id = :id")
+    fun getContactById(id: Long): LiveData<ContactEntity>
 }

@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="backgroundGradient">#F3F4F6</color>
+    <color name="primaryColor">#6200EE</color>
+    <color name="secondaryColor">#03DAC5</color>
+    <color name="primaryDarkColor">#3700B3</color>
+
+
+
+    <color name="accentColor">#FF5722</color>
+    <color name="primaryLight">#BB86FC</color>
+    <color name="secondaryLight">#B2EBF2</color>
+    <color name="card_background">#F5F5F5</color>
+    <color name="card_stroke">#22000000</color>
+    <color name="dark_shadow">#40000000</color>
+    <color name="errorColor">#B00020</color>
 
 </resources>

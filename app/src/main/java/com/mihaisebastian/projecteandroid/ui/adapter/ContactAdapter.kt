@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mihaisebastian.projecteandroid.R
 import com.mihaisebastian.projecteandroid.data.ContactEntity
 
-class ContactAdapter(private val onContactClick: (ContactEntity) -> Unit) :
+class ContactAdapter(private val onContactClick: (Long) -> Unit) :
     ListAdapter<ContactEntity, ContactAdapter.ContactViewHolder>(ContactDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
@@ -19,12 +19,12 @@ class ContactAdapter(private val onContactClick: (ContactEntity) -> Unit) :
     }
 
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
-        val contact = getItem(position)
-        holder.bind(contact)
+        holder.bind(getItem(position))
     }
 
-    class ContactViewHolder(itemView: View, private val onContactClick: (ContactEntity) -> Unit) :
+    class ContactViewHolder(itemView: View, private val onClick: (Long) -> Unit) :
         RecyclerView.ViewHolder(itemView) {
+
         private val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
         private val phoneTextView: TextView = itemView.findViewById(R.id.phoneTextView)
         private val emailTextView: TextView = itemView.findViewById(R.id.emailTextView)
@@ -34,7 +34,7 @@ class ContactAdapter(private val onContactClick: (ContactEntity) -> Unit) :
             phoneTextView.text = contact.phone
             emailTextView.text = contact.email
 
-            itemView.setOnClickListener { onContactClick(contact) }
+            itemView.setOnClickListener { onClick(contact.id) }
         }
     }
 
