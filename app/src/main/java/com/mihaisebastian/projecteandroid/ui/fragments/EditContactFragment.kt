@@ -76,7 +76,6 @@ class EditContactFragment : Fragment(R.layout.fragment_edit_contact) {
                 contactViewModel.updateContact(updatedContact)
                 Toast.makeText(requireContext(), "Canvis guardats", Toast.LENGTH_SHORT).show()
 
-                // Navegación corregida
                 parentFragmentManager.popBackStack("show_to_edit", FragmentManager.POP_BACK_STACK_INCLUSIVE)
             }
         }
